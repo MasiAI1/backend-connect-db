@@ -19,12 +19,11 @@ const findGameById = async (req,res,next) =>{
             path:'users',
             select:'-password'
         })
-    next()
-}
+        next()
+    }
 
 const createGame = async (req, res,next) => {
     console.log('POST /games')
-    games.create(req.body)
     try {
         req.game = await  games.create(req.body)
         next()
@@ -33,4 +32,4 @@ const createGame = async (req, res,next) => {
     }
 }
 
-module.exports= [findAllGames, createGame]
+module.exports= {findAllGames, createGame}

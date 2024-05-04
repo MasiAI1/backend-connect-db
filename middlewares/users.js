@@ -1,13 +1,14 @@
-const user = require("../models/user")
+const users = require("../models/user")
 
 const findAllUsers = async (req, res, next) => {
-    req.usersArray = await user.find({})
+    console.log('GET /users')
+    req.usersArray = await users.find({})
     next()
 }
 
 const findUserById = async (req, res, next)  => {
-  try{
-      req.category = await users.findById(req.params.id)
+  try {
+      req.user = await users.findById(req.params.id)
       next()
   } catch (err){
       res.status(404).send({message:'User not found'})

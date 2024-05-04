@@ -1,9 +1,9 @@
-const category = require("../models/category")
+const categories = require("../models/category")
 const games = require("../models/game");
 
 const findAllCategories = async (req, res, next) => {
     console.log('GET /categories')
-    req.categoriesArray = await category.find({})
+    req.categoriesArray = await categories.find({})
     next()
 }
 
@@ -12,7 +12,7 @@ const findCategoryById = async (req, res, next)  => {
       req.category = await categories.findById(req.params.id)
       next()
   } catch (err){
-      res.status(404).send({message:'Caregory not found'})
+      res.status(404).send({message:'Category not found'})
   }
 }
 
