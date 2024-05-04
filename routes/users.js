@@ -1,8 +1,9 @@
 const usersRouter = require('express').Router()
-const {findAllUsers, createUser } = require("../middlewares/users")
-const { sendAllUsers, sendCreatedUser } = require("../controllers/users")
+const {findAllUsers, createUser, updateUser,checkEmptyNameAndEmail } = require("../middlewares/users")
+const { sendAllUsers, sendCreatedUser, sendUserUpdated  } = require("../controllers/users")
 
-usersRouter.get('/games', findAllUsers, sendAllUsers)
-usersRouter.post('/games', findAllUsers, createUser,sendCreatedUser)
+usersRouter.get('/users', findAllUsers, sendAllUsers)
+usersRouter.post('/users',checkEmptyNameAndEmail, findAllUsers, createUser,sendCreatedUser)
+usersRouter.put('/users/:id',checkEmptyNameAndEmail, updateUser, sendUserUpdated)
 
 module.exports = usersRouter

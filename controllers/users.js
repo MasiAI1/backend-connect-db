@@ -8,4 +8,9 @@ const sendCreatedUser= (req,res) => {
     res.end(JSON.stringify(req.user))
 }
 
-module.exports = [sendAllUsers,sendCreatedUser]
+const sendUserUpdated = (req,res) => {
+    res.setHeader('Content-Type', 'application/json')
+    res.end({message:'Пользователь обновлен'})
+}
+
+module.exports = [sendAllUsers,sendCreatedUser, sendUserUpdated]
