@@ -1,5 +1,6 @@
 const users = require("../models/user")
 const games = require("../models/game");
+const bcrypt = require('bcryptjs')
 
 const findAllUsers = async (req, res, next) => {
     console.log('GET /users')
@@ -52,4 +53,15 @@ const deleteUser = async (req,res,next) => {
     }
 }
 
-module.exports= {findAllUsers, findUserById, createUser, updateUser,checkEmptyNameAndEmail, deleteUser}
+const hashPassword = async (req, res, next) => {
+    try{
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(req.body.password, salt)
+        req.body.password = hash
+        next()
+    } catch (err) {
+        res.status(400).send({message:'Ошибка хэширования пароля'})
+    }
+}
+
+module.exports= {findAllUsers, findUserById, createUser, updateUser,checkEmptyNameAndEmail, deleteUser, hashPassword}
