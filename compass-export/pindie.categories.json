@@ -1,36 +1,42 @@
 [{
   "_id": {
-    "$oid": "662d1fec1ca609a57a3e00e7"
+    "$oid": "65fd4ae18dfd769ce313327d"
   },
-  "name:\"popular\"": ""
+  "name": "popular",
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "662e72d57f7d7a75bce0137b"
+    "$oid": "65fd4ae88dfd769ce3133282"
   },
-  "name:\"new\"": ""
+  "name": "shooter",
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "662e73a07f7d7a75bce0137c"
+    "$oid": "65fd4eefee6f92e3d791d0d1"
   },
-  "name:\"TDS\"": ""
+  "name": "TDS",
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "662e73ac7f7d7a75bce0137d"
+    "$oid": "65fd4ef6ee6f92e3d791d0d7"
   },
-  "name:\"shooter\"": ""
+  "name": "pixel",
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "662e73f57f7d7a75bce01381"
+    "$oid": "660bc0a61755c9b3a8173553"
   },
-  "name:\"runner\"": ""
+  "name": "new",
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "662e73ff7f7d7a75bce01382"
+    "$oid": "660cee4e0fee465c0a9a03c6"
   },
-  "name:\"pixel\"": ""
+  "name": "runner",
+  "__v": 0
 }]
