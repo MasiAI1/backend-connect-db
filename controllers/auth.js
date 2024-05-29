@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs')
 const user = require("../models/user")
 const jwt = require("jsonwebtoken");
+const path = require("path");
 const login = (req,res) => {
     const {email, password} = req.body
     user

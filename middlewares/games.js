@@ -1,4 +1,5 @@
 const games = require("../models/game")
+const findGameByCategory = require('../middlewares/categories')
 
 const findAllGames = async (req, res, next) => {
     if(req.query["categories.name"]) {
